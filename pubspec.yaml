@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_bloc: ^8.1.5
   get_it: ^7.6.7
+  http: ^1.2.1
+  web_socket_channel: ^2.4.4
 
 dev_dependencies:
   flutter_test:

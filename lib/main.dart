@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LaundryRoomBloc>(
-      create: (context) =>
-          locator<LaundryRoomBloc>()..add(GetAllLaundryRoomStateEvent()),
+      create: (context) => locator<LaundryRoomBloc>()
+        ..add(GetAllLaundryRoomStateEvent())
+        ..add(GetLaundryRoomStateEvent()),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: LaundryRoomPage(),
