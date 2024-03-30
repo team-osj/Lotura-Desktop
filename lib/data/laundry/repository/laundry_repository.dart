@@ -3,17 +3,18 @@ import 'package:lotura_desktop/domain/laundry/entity/machine_entity.dart';
 import 'package:lotura_desktop/domain/laundry/repository/laundry_repository.dart';
 
 class LaundryRepositoryImpl implements LaundryRepository {
-  final LaundryDataSource dataSource;
+  final LaundryDataSource _dataSource;
 
-  LaundryRepositoryImpl({required this.dataSource});
+  LaundryRepositoryImpl({required LaundryDataSource dataSource})
+      : _dataSource = dataSource;
 
   @override
   Future<List<MachineEntity>> getAllLaundryList() =>
-      dataSource.getAllLaundryList();
+      _dataSource.getAllLaundryList();
 
   @override
-  Stream<MachineEntity> get laundryList => throw UnimplementedError();
+  Stream<MachineEntity> get laundryList => _dataSource.laundryList;
 
   @override
-  void webSocketInit() {}
+  void webSocketInit() => _dataSource.webSocketInit();
 }
